@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: powerschool
+    database: NORTH_STAR
+    schema: ANALYTICS
+    tables:
+      - name: y1_grades_updated
+      - name: historical_grades
