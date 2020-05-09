@@ -1,5 +1,4 @@
 with 
-
 credits as (
     select * from {{ ref('y1_creds_by_type_by_student')}}
 ),
@@ -7,14 +6,13 @@ credits as (
 final as (
     select 
         student_id,
-        lastfirst,
-        {{ credit_types_list() }}  -- list of credits to make columns for pivot table
+        lastfirst
     
     from credits
 
     pivot (
         sum(total_credits_earned) -- total creds for each credit type
-        for credit_type in ({{ credit_types_list() }})
+        for credit_type in ({{ credit_types_list() }}) 
     ) as PivotTable
 )
 
