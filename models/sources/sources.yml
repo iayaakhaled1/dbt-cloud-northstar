@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: tableau
+    database: northstar
+    schema: dbo
+    tables:
+      - name: 1617_SAT Data
+      - name: 1718_SAT Data
+      - name: 1819_SAT Data
+      - name: 1920_SAT Data
+
+  - name: kickboard
+    database: northstar
+    schema: dbo
+    tables:
+      - name: 1516_KB Data
+      - name: 1617_KB Data
+      - name: 1718_KB Data
+      - name: 1819_KB Data
+
+  - name: powerschool
+    database: northstar
+    schema: dbo
+    tables:
+      - name: C2020_Y1_Historical
+      - name: c2020_apr24_grade_by_quarter
+      - name: 1920_y1_grades
