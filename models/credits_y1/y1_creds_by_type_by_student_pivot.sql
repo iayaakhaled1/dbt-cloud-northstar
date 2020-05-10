@@ -4,9 +4,7 @@ credits as (
 ),
 
 final as (
-    select 
-        student_id,
-        lastfirst
+    select *
     
     from credits
 
