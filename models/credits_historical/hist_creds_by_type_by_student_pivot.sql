@@ -11,7 +11,7 @@ final as (
         {{ credit_types_list() }}  -- list of credits to make columns for pivot table
     
     from credits
-
+),
 final as (
     select *
 
@@ -22,6 +22,5 @@ final as (
         for credit_type in ({{ credit_types_list() }}))
     as PivotTable (student_id, lastfirst, eng, math, sci, hist, forlang, elect, pe, cr, admin)
 )
-
 
 select * from final 
