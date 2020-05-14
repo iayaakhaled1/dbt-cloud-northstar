@@ -41,4 +41,6 @@ models:
             materialized: table
         behavior:
             materialized: table
+        vars:
+            academic_years: "('SY1516','SY1617','SY1718','SY1819','SY1920')"
 

@@ -3,7 +3,7 @@ with
 credits as (
     select * from {{ ref('hist_creds_by_type_by_student')}}
 ),
-
+ 
 final as (
     select 
         student_id,
