@@ -7,3 +7,10 @@ sources:
     tables:
       - name: y1_grades_updated
       - name: historical_grades
+
+  - name: kickboard
+    database: NORTH_STAR
+    schema: ANALYTICS
+    tables:
+      - name: kickboard_historical
+    

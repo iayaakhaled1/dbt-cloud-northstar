@@ -39,4 +39,6 @@ models:
             materialized: table
         graduation_decision_tables:
             materialized: table
+        behavior:
+            materialized: table
 
