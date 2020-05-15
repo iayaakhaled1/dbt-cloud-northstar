@@ -1,8 +1,8 @@
+version: 2
+
 models:
   - name: stg_courses
     description: Table of the unique courses from Class of 2020 four years.
-    docs:
-      show: true
     columns:
       - name: course_id
         description: The primary key for identifying courses.
@@ -13,8 +13,6 @@ models:
 
   - name: stg_hist_grades
     description: Table of historical grades for the Class of 2020.
-    docs:
-      show: true
     columns:
       - name: course_id
         description: The primary key for identifying courses.
@@ -29,8 +27,6 @@ models:
 
   - name: stg_kickboard_events
     description: Table of all kickboard behavior events.
-    docs:
-      show: true
     columns:
       - name: student_id
         description: The primary key for identifying students.
@@ -47,12 +43,10 @@ models:
       - name: teacher_name
         description: The name of the teacher who logged the behavior.
       - name: timestamp
-        description: 
-\
+        description: The time at which the teacher logged the behavior.
+
   - name: stg_sections
     description: Table of all sections for the past four years.
-    docs:
-      show: true
     columns:
       - name: section_id
         description: The primary key for identifying the section.
@@ -63,11 +57,8 @@ models:
       - name: credit_type
         description: The credit type that is associated with the particular course.
 
-
   - name: stg_students
     description: Table of all the seniors.
-    docs:
-      show: true
     columns:
       - name: student_id
         description: The primary key for identifying the student.
@@ -78,8 +69,6 @@ models:
 
   - name: stg_y1_grades
     description: Table of Y1 grades for the 1920 school year.
-    docs:
-      show: true
     columns:
       - name: student_id
         description: The primary key for identifying the student.
