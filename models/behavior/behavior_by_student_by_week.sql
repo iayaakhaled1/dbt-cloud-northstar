@@ -14,7 +14,7 @@ pos_events as (
     left join weeks
     on (events.timestamp >= weeks.start_date and events.timestamp <= weeks.end_date)
     where (events.behavior_category = 'Positive Behaviors' and events.timestamp >= '2019-08-19')
-    group by 1, 2, 3
+    group by 1, 2, 3, 4
 ),
 
 neg_events as (
