@@ -7,6 +7,7 @@ with events as (
         "Dollar Value" as dollar_value,
         "Merit Value" as merit_value,
         Staff as teacher_name,
+        "GROUP" as grade_group,
         "Recorded On" as timestamp
         
     from {{ source("kickboard","kickboard_historical") }}
