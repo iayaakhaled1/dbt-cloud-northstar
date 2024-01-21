@@ -1,28 +1,32 @@
-
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'dbtcloudnorthstar'
-version: '1.0.0'
+name: "jaffle_shop"
+version: "1.0.0"
+config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'default'
+profile: "snowflake"
+require-dbt-version: ">=1.6.0rc2"
 
 # These configurations specify where dbt should look for different types of files.
-# The `source-paths` config, for example, states that models in this project can be
+# The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
-source-paths: ["models"]
-analysis-paths: ["analysis"]
+model-paths: ["models"]
+analysis-paths: ["analyses"]
 test-paths: ["tests"]
-data-paths: ["data"]
+seed-paths: ["jaffle-data"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
-target-path: "target"  # directory which will store compiled SQL files
-clean-targets:         # directories to be removed by `dbt clean`
-    - "target"
-    - "dbt_modules"
+target-path: "target" # directory which will store compiled SQL files
+clean-targets: # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
 
+vars:
+  truncate_timespan_to: "{{ current_timestamp() }}"
+  "dbt_date:time_zone": "America/Los_Angeles"
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -30,17 +34,10 @@ clean-targets:         # directories to be removed by `dbt clean`
 # In this example config, we tell dbt to build all models in the example/ directory
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
-models:
-    dbtcloudnorthstar:
-    # Applies to all files under models/example/
-        credits_historical:
-            materialized: table
-        credits_y1:
-            materialized: table
-        graduation_decision_tables:
-            materialized: table
-        behavior:
-            materialized: table
-        vars:
-            academic_years: "('SY1516','SY1617','SY1718','SY1819','SY1920')"
 
+models:
+  jaffle_shop:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
